@@ -93,16 +93,12 @@
 \subsection{Algorithm Steps}
 {
 \begin{itemize}
-\item If fourth column which is depicting plans in CDR is 1 then store it in plan1 file.
-\item Repeat step 1 for plan2 and plan 3 as well.
-\end{itemize}
-\begin{itemize}
-\item Search for MTC,MOC,SMSMT or SMSMO in fifth column and increment the value in corresponding variable.
-\item Do above step for plan1,plan2 and plan3 file.
-\end{itemize}
-\begin{itemize}
-\item Calculate MOC and SMS-MO charge according to plan rate table.
-\item Print output in desired format.
+\item Take m and n as dimensions from user as input and store S or D in it.
+\item Replace S by 1 and D by 0 in this matrix.
+\item Take matrx $[-1,0,1]$ to determine cross.
+\item Multiply each cell value by this matrix rowwise and columnwise.
+\item If column and row sum is equal to 1 then sum it and print it.
+\item Repeat above steps for further calculations. 
 \end{itemize}
 
 
@@ -117,18 +113,13 @@
 \begin{itemize}
 \item \subsubsection{Input Format}
 \begin{itemize}
-\item awk fileawk filenametxt 
+\item Two space separated values.
+\item Input taken as S or D for each cell.
 \end{itemize}
 
 \item \subsubsection{Output Format}
 \begin{itemize}
-\item All plan file in text format.
-\item For each plan : Call type:Average Valeu
-\item                 SMS type:Total value  
-\item For part$1.3$
-\item call type:charge
-\item Sms type:charge
-\item Total charge
+\item Two space separated values denoting sizes of two cross.
 \end{itemize}
 \end{itemize}
 
@@ -138,16 +129,21 @@
 \subsection{Difficulty faced}
 {
 \begin{itemize}
-\item Process multiple files.
+\item Determining pattern for cross.
 \end{itemize}
 }
 
+\subsection{Program Structure}
+\begin{center}
+\includegraphics[scale=0.60]{fc2.png}
+\end{center}
+\newpage
 
 
 \subsection{Screenshots}
 {
 \begin{center}
-\includegraphics[scale=0.70]{sc1.png}
+\includegraphics[scale=0.70]{ss1.png}
 
 
 \end{center}
@@ -160,19 +156,16 @@
 {
 
 \subsection{Problem Statement}
-\paragraph{ Search for a word in a file} 
+\paragraph{ Rotate keys and values of a string by k.} 
 \begin{itemize}
-\item Search for the in file print that line.
-\item Count number of occurance of the and print it.
-\item count the number of lines in input and output files and find ratio.
+\item Divide alphabets and underscore into three groups and rotate by key and print result.
 \end{itemize}
 } 
 
 \subsection{Assumptions}
 {
 \begin{itemize}
-\item the cannot be in the end of any line.
-\item two words in file is separated by a space.
+\item Keys must be integer.
 \end{itemize}
 }
 
@@ -182,9 +175,10 @@
 \subsection{Algorithm Steps}
 {
 \begin{itemize}
-\item Search for the in file and print that line which contains it.
-\item While reading each line containing the,keep on incrementing counter and at the end print it.
-\item Find the number of lines in input and output file containing the and find its ratio.
+\item Alphabets and underscore is divided into three groups of tuple as required.
+\item Take keys as input for each group to rotate by.
+\item Rotate each dictionary by corresponding key.
+\item Store result in a list based on dictionary key values.
 \end{itemize}
 
 \subsection{Input and Output Format}
@@ -195,14 +189,13 @@
 \begin{itemize}
 \item \subsubsection{Input Format}
 \begin{itemize}
-\item  awk fileawk filename 
+\item Three space separated keys,one for each group.
+\item String is taken as input.
 \end{itemize}
 
 \item \subsubsection{Output Format}
 \begin{itemize}
-\item First few lines are lines containing the from input file.
-\item Counter value
-\item Ratio
+\item Decrypted key as output string.
 \end{itemize}
 \end{itemize}
 
@@ -212,23 +205,22 @@
 \subsection{Difficulty faced}
 {
 \begin{itemize}
-\item Processing multiple files at a time.
+\item rotate key value pair by key.
 \end{itemize}
 }
 
 \newpage
 \subsection{Program Structure}
 \begin{center}
-\includegraphics[scale=0.60]{fc2.png}
+\includegraphics[scale=0.60]{fc1.png}
 \end{center}
 \newpage
 
 \subsection{Screenshots}
 {
 \begin{center}
-\includegraphics[scale=0.70]{sc21.png}
-\includegraphics[scale=0.70]{sc22.png}
-
+\includegraphics[scale=0.70]{ss21.png}
+\includegraphics[scale=0.70]{ss22.png}
 \end{center}
 \newpage
 }
@@ -251,13 +243,12 @@
 
 \begin{thebibliography}{}
 \bibitem{} 
-https://stackoverflow.com/questions/44894083/awk-to-extract-lines-in-file-that-contain-matching-pattern-and-variable-digit
+https://stackoverflow.com/questions/33554620/rotating-values-in-a-list-python
  
 \bibitem{}
-https://www.tutorialspoint.com/awk/awkbasicexamples.htm
+https://www.tutorialspoint.com/python/python2darray.htm
 
-\bibitem{} 
-https://www.thegeekstuff.com/2010/02/awkconditionalstatements/
+
  
 
 

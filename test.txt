@@ -1,0 +1,76 @@
+S
+S
+S
+S
+S
+S
+S
+S
+S
+
+
+S
+S
+D
+s
+S
+S
+D
+S
+D
+
+
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+
+
+#return count;
+			'''
+			if x+1>0 and y+1>0 and x<m-2 and y<n-2:
+				if a[x+2][y]=='1' and a[x][y+2]=='1' and a[x-2][y]=='1' and a[x][y-2]=='1':
+					return count+8;
+		
+	     	'''
+

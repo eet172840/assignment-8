@@ -1,75 +1,68 @@
-###### this is the second .py file ###########
-
-from itertools import *
-
-#function to rotate key-value pair in a dictionary
-def rotatebyone(dictionary):
-	if dictionary:
-		keys=dictionary.keys()
-		values=dictionary.values()
-		firstkey=next(keys))
-		dict=dict(izip(keys,values))
-		dictionary[firstkey]=next(values)
-	return dictionary
 
 
-#Taking keys as input which are space separated
+#This function rotate the list by x number
+def rotate(lst,x):
+    copy = list(lst)
+    for i in range(len(lst)):
+        if x<0:
+            lst[i+x] = copy[i]
+        else:
+            lst[i] = copy[i-x]
+
+#Taking user input for 3 keys as k,l,m
 k,l,m = input().split()
 k=int(k)
 l=int(l)
 m=int(m)
-#taking input string which is encrypted
+#Taking input in str variable
 str=input()
 
+#Dividing all alphabets and _ in 3 groups in a list
+t1=['a','b','c','d','e','f','g','h','i']
+t2=['j','k','l','m','n','o','p','q','r']
+t3=['s','t','u','v','w','x','y','z','_']
 
-#storing all 26 words and _ in tuple to divide in 3 groups
-t1=('a','b','c','d','e','f','g','h','i')
-t2=('j','k','l','m','n','o','p','q','r')
-t3=('s','t','u','v','w','x','y','z','_')
+#initalizing list to store key value pair 
+a1=[]
+a2=[]
+a3=[]
 
-#initalizing dictionary to store key value pair 
-a1={}
-a2={}
-a3={}
-
+#enumerate through each element of str and
+#if it matches to corresponding group,add it to that list.
 for i,j in enumerate(str,0):
 	if j in t1:
-		a1[i]=j
+		a1.append(j)
 		
 	elif j in t2:
-		a2[i]=j
+		a2.append(j)
 		
 	else:
-		a3[i]=j
-		
+		a3.append(j)
 
-print(a1)
-print(a2)
-print(a3)
- 
-#rotating dictionary value of group 1
-while k>0:
-	rotatebyone(a1)
-	k-=1
-#rotating dictionary value of group 1
-while k>0:
-	rotatebyone(a1)
-	k-=1
-#rotating dictionary value of group 1
-while k>0:
-	rotatebyone(a1)
-	k-=1
 
-#print(a1)
+#Calling function to rotate all 3 lists
+rotate(a1,k)
+rotate(a2,l)
+rotate(a3,m)
 
-#Merging all lists to reflect result as decrypted message 
+#initalizing variables
+g=0
 res=[]
-for i in enumerate(str,0):
-	if i in a1.keys():
-		res.append(a1[i])
-	if i in a2.keys():
-		res.append(a2[i])
-	if i in a3.keys():
-		res.append(a3[i])
+p,q,r=0,0,0
+#enumerate through str to check 
+#which group this element belongs to
+for i,j in enumerate(str,0):	
+	if j in t1:
+		res.append(a1[p])
+		p+=1
+	elif j in t2:
+		res.append(a2[q])
+		q+=1
+	else:
+		res.append(a3[r])
+		r+=1
 
-print(res)
+#Printing Result
+for c in res:
+	print(c,end="")
+print()
